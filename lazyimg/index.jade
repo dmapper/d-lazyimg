@@ -1,0 +1,8 @@
+index:(tag='lazyimg')
+  if tag
+    tag.lazyimg(is='{{tag}}' style="background-image: {{unbound getImage()}}"
+        class='{{class}}' as='tag')
+      .lazyimg-fullimg(as='tagimg')
+      | {{@content}}
+  else
+    img(src='{{unbound getImage()}}' as='img' class='{{class}}')

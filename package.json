@@ -1,0 +1,21 @@
+{
+  "name": "d-lazyimg",
+  "description": "Lazy load images plugin for derby.js",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dmapper/d-lazyimg.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "./node_modules/.bin/coffee --compile .",
+    "postpublish": "find . -name '*.coffee' -type f | grep -v 'node_modules' | sed -e 's/\\.coffee/\\.js/g' | xargs /bin/rm -f"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "urify": "*"
+  },
+  "devDependencies": {}
+}

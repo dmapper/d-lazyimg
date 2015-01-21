@@ -1,0 +1,7 @@
+index:(tag='dataimg')
+  if tag
+    tag(is='{{tag}}' style="background-image: {{unbound getImage()}}"
+        as='tag' class='{{class}}')
+      | {{@content}}
+  else
+    img(src='{{unbound getImage()}}' as='img' class='{{class}}')
