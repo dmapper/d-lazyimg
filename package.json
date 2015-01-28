@@ -8,14 +8,21 @@
   },
   "main": "index.js",
   "scripts": {
-    "prepublish": "./node_modules/.bin/coffee --compile .",
-    "postpublish": "find . -name '*.coffee' -type f | grep -v 'node_modules' | sed -e 's/\\.coffee/\\.js/g' | xargs /bin/rm -f"
+    "compile-jade": "find . -name '*.jade' -type f | grep -v 'node_modules' | xargs ./node_modules/.bin/derby-jade",
+    "revert-jade": "find . -name '*.jade' -type f | grep -v 'node_modules' | sed -e 's/\\.jade/\\.html/g' | xargs /bin/rm -f",
+    "compile-coffee": "./node_modules/.bin/coffee --compile .",
+    "revert-coffee": "find . -name '*.coffee' -type f | grep -v 'node_modules' | sed -e 's/\\.coffee/\\.js/g' | xargs /bin/rm -f",
+    "prepublish": "npm run compile-coffee && npm run compile-jade",
+    "postpublish": "npm run revert-coffee && npm run revert-jade"
   },
   "engines": {
     "node": "0.10.x"
   },
   "dependencies": {
-    "urify": "*"
+    "urify": "git://github.com/dmapper/urify"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "derby-jade": "^0.6.17"
+  },
+  "peerDependencies": {}
 }
