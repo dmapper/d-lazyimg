@@ -2,6 +2,10 @@
 
 > Lazy load images
 
+## Dependencies
+
+Requires `derby-stylus` to support styles.
+
 ## Usage
 
 1. Create `images.assets.js` file with datauri images. Use `datauri` module for it:
