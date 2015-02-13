@@ -23,12 +23,7 @@ module.exports = (Dataimg) -> class Lazyimg extends Dataimg
 
   switchImage: ->
     if @model.get('tag')
-      @tagimg.style.backgroundImage = @getImage(@src)
-      @timeout = setTimeout =>
-        requestAnimationFrame =>
-          requestAnimationFrame =>
-            @tag.style.backgroundImage = 'none'
-      , 500
+      @tag.style.backgroundImage = @getImage(@src)
     else
       @img.src = @getImage(@src)
 
