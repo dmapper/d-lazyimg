@@ -26,6 +26,3 @@ module.exports = (Dataimg) -> class Lazyimg extends Dataimg
       @tag.style.backgroundImage = @getImage(@src)
     else
       @img.src = @getImage(@src)
-
-  destroy: ->
-    clearTimeout @timeout
