@@ -1,6 +1,6 @@
 module.exports = (Dataimg) -> class Lazyimg extends Dataimg
-  view: __dirname
-  style: __dirname
+  view: require('./index.jade')
+  style: require('./index.styl')
 
   init: ->
     super

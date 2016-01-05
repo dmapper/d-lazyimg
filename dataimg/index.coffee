@@ -1,5 +1,5 @@
 module.exports = (images) -> class Dataimg
-  view: __dirname
+  view: require('./index.jade')
 
   init: ->
     @src = @model.get 'src'
