@@ -8,3 +8,4 @@ module.exports = function (content) {
       content.toString('base64')
   )
 }
+module.exports.raw = true;
