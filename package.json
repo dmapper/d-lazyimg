@@ -23,8 +23,5 @@
   },
   "devDependencies": {
     "derby-jade": "^0.6.17"
-  },
-  "peerDependencies": {
-    "derby-stylus": "*"
   }
 }
